@@ -1,0 +1,6 @@
+## Plot Table
+### evenly distributed role
+| Role | Name           | Description                                                                                                                                                              | Example                                                                  |
+|:----:|:---------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+|  1   | alien invasion | Alien could be anything also people from other nations or strange monsters / animals. Show signs of it first, then indirect damage and only at the end the alien itself. | [War of the worlds](https://en.wikipedia.org/wiki/The_War_of_the_Worlds) |
+|  2   | Text           | And more                                                                                                                                                                 |                                                                          |
