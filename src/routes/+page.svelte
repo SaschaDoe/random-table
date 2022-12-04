@@ -1,5 +1,7 @@
 <script>
+	import { loadPlotTable } from './tables/tables-loader';
 
+	let bla = loadPlotTable();
 </script>
 
 <svelte:head>
@@ -10,6 +12,9 @@
 <div>
 	<button>Add Plot</button>
 	<button>Add Character</button>
+	<ul>
+		<li>{bla}</li>
+	</ul>
 </div>
 
 
