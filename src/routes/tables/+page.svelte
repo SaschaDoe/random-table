@@ -1,6 +1,6 @@
 <script>
     import SvelteMarkdown from 'svelte-markdown'
-    import source from './plot/plot_table.server.md?raw';
+    import source from './plot/plot_table.md?raw';
 
 </script>
 
