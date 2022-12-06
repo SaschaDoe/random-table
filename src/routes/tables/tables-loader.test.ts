@@ -1,37 +1,26 @@
-import { describe, it, expect } from 'vitest';
-import { loadPlotTable } from './tables-loader';
-import {Table} from "./table";
+import { describe, it, expect, test } from 'vitest';
 import {TableParser} from "./table-parser";
 
-describe('table-parser', () => {
-    it('parse disadvantage title', () => {
-        const rawTable =
-            `## Disadvantage Table
-             ### evenly distributed`;
+    const disadvantageTable =
+        `## Disadvantage Table
+         ### evenly distributed
+         | Role | Name        | Description   `;
+
+    const plotTable =
+        `## Plot Table
+         ### evenly distributed
+         | Role | Name        | Description   `;
+
+    test.each([
+        [plotTable, "Plot Table", "evenly distributed"],
+        [disadvantageTable, "Disadvantage Table", "evenly distributed"],
+    ])('parse %s', (
+        rawTable,
+        title,
+        distribution) => {
 
         let table = new TableParser().Parse(()=>rawTable);
 
-        expect(table.title).toBe("Disadvantage Table");
+        expect(table.title).toBe(title);
+        expect(table.distribution).toBe(distribution);
     });
-
-    it('parse plot title', () => {
-        const rawTable =
-            `## Plot Table
-             ### evenly distributed`;
-
-        let table = new TableParser().Parse(()=>rawTable);
-
-        expect(table.title).toBe("Plot Table");
-    });
-
-    it('parse distribution', () => {
-        const rawTable =
-            `## Plot Table
-             ### evenly distributed
-             | Role | Name        | Description   `;
-
-        let table = new TableParser().Parse(()=>rawTable);
-
-        expect(table.distribution).toBe("evenly distributed");
-    });
-});
